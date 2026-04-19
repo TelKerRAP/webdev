@@ -115,13 +115,36 @@
 
 <section class="form" id="contact">
   <h2>Contáctanos</h2>
-  <form>
-    <input type="text" placeholder="Nombre" required>
-    <input type="email" placeholder="Correo" required>
-    <textarea placeholder="Tu proyecto"></textarea>
-    <button>Enviar</button>
+
+  <form id="whatsappForm">
+    <input type="text" id="nombre" placeholder="Nombre" required>
+    <input type="email" id="correo" placeholder="Correo" required>
+    <textarea id="mensaje" placeholder="Tu proyecto" required></textarea>
+
+    <button type="submit">Enviar por WhatsApp</button>
   </form>
 </section>
+
+<script>
+  document.getElementById("whatsappForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const telefono = "523221461118"; // 👈 Cambia aquí tu número
+
+    const nombre = document.getElementById("nombre").value;
+    const correo = document.getElementById("correo").value;
+    const mensaje = document.getElementById("mensaje").value;
+
+    const texto = `Hola, quiero más información:%0A
+Nombre: ${nombre}%0A
+Correo: ${correo}%0A
+Mensaje: ${mensaje}`;
+
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, "_blank");
+  });
+</script>
 
 <a href="https://wa.me/523221461118" class="whatsapp">💬</a>
 
