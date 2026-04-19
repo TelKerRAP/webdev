@@ -135,9 +135,9 @@
     const correo = document.getElementById("correo").value;
     const mensaje = document.getElementById("mensaje").value;
 
-    const texto = `Hola, quiero más información:%0A
-Nombre: ${nombre}%0A
-Correo: ${correo}%0A
+    const texto = `Hola, quiero más información:
+Nombre: ${nombre}
+Correo: ${correo}
 Mensaje: ${mensaje}`;
 
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
@@ -145,12 +145,11 @@ Mensaje: ${mensaje}`;
     window.open(url, "_blank");
   });
 </script>
-
-<a href="https://wa.me/523221461118" class="whatsapp">💬</a>
-
 <footer>
   <p>© 2026 TelKer Studio´s</p>
 </footer>
+<a href="https://wa.me/523221461118" class="whatsapp">💬</a>
+
 
 </body>
 </html>
