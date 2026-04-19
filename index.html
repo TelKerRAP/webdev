@@ -135,10 +135,15 @@
     const correo = document.getElementById("correo").value;
     const mensaje = document.getElementById("mensaje").value;
 
-    const texto = `📩 Nuevo mensaje:
-👤 Nombre: ${nombre}
+    const texto = `📩 NUEVA SOLICITUD WEB
+
+Hola, ¿qué tal?
+Soy ${nombre} y me interesa cotizar un proyecto web contigo.
+
 📧 Correo: ${correo}
-💬 Mensaje: ${mensaje}`;
+💬 Necesidad del proyecto: ${mensaje}
+
+🚀 Espero tu respuesta para avanzar con la cotización.`;
 
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
 
