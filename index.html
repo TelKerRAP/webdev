@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desarrollo Web Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#0f172a;color:#fff;scroll-behavior:smooth;}
+    header{padding:20px 50px;display:flex;justify-content:space-between;align-items:center;background:#020617;position:sticky;top:0;z-index:1000;}
+    header h1{color:#38bdf8;}
+    nav a{margin-left:20px;color:#fff;text-decoration:none;}
+
+    .hero{padding:100px 20px;text-align:center;}
+    .hero h2{font-size:42px;margin-bottom:20px;}
+    .hero p{opacity:0.7;margin-bottom:30px;}
+
+    .btn{background:#38bdf8;color:#000;padding:12px 25px;border-radius:30px;text-decoration:none;font-weight:600;display:inline-block;}
+
+    .services{padding:60px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .card{background:#020617;padding:25px;border-radius:15px;transition:0.3s;}
+    .card:hover{transform:translateY(-5px);}
+    .card h3{color:#38bdf8;margin-bottom:10px;}
+
+    .pricing{padding:60px 20px;text-align:center;}
+    .pricing h2{margin-bottom:30px;}
+    .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .price-card{background:#020617;padding:30px;border-radius:15px;}
+    .price-card h3{color:#38bdf8;margin-bottom:10px;}
+    .price{font-size:30px;margin:15px 0;}
+
+    .testimonials{padding:60px 20px;background:#020617;text-align:center;}
+    .testimonial{max-width:600px;margin:auto;margin-bottom:20px;opacity:0.8;}
+
+    .form{padding:60px 20px;}
+    form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+    input,textarea{padding:12px;border:none;border-radius:8px;background:#020617;color:#fff;}
+    button{padding:12px;border:none;border-radius:30px;background:#38bdf8;font-weight:600;cursor:pointer;}
+
+    .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%;color:#fff;font-size:20px;text-decoration:none;}
+
+    footer{text-align:center;padding:20px;background:#020617;opacity:0.6;}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>WebDev Pro</h1>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#services">Servicios</a>
+    <a href="#pricing">Precios</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Diseñamos Páginas Web que Venden</h2>
+  <p>Aumenta tus clientes con una web profesional y moderna</p>
+  <a href="#contact" class="btn">Solicitar Cotización</a>
+</section>
+
+<section class="services" id="services">
+  <div class="card">
+    <h3>Páginas Web</h3>
+    <p>Diseño moderno y optimizado</p>
+  </div>
+  <div class="card">
+    <h3>Tiendas Online</h3>
+    <p>Venta con pagos integrados</p>
+  </div>
+  <div class="card">
+    <h3>Landing Pages</h3>
+    <p>Alta conversión</p>
+  </div>
+  <div class="card">
+    <h3>SEO</h3>
+    <p>Posicionamiento en Google</p>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>Planes</h2>
+  <div class="price-grid">
+    <div class="price-card">
+      <h3>Básico</h3>
+      <p>Renta Mensual</p>
+      <div class="price">$3,500 MXN</div>
+      <p>Landing Page</p>
+      <a href="#contact" class="btn">Contacto</a>
+    </div>
+    <div class="price-card">
+      <h3>Profesional</h3>
+      <p>Renta Mensual</p>
+      <div class="price">$5,500 MXN</div>
+      <p>Sitio completo</p>
+      <a href="#contact" class="btn">Contacto</a>
+    </div>
+    <div class="price-card">
+      <h3>Premium</h3>
+      <p>Renta Mensual</p>
+      <div class="price">$10,500 MXN</div>
+      <p>Tienda + SEO</p>
+      <a href="#contact" class="btn">Contacto</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <h2>Clientes</h2>
+  <p class="testimonial">"Excelente servicio, mi negocio creció mucho"</p>
+  <p class="testimonial">"Muy profesional y rápido"</p>
+</section>
+
+<section class="form" id="contact">
+  <h2>Contáctanos</h2>
+  <form>
+    <input type="text" placeholder="Nombre" required>
+    <input type="email" placeholder="Correo" required>
+    <textarea placeholder="Tu proyecto"></textarea>
+    <button>Enviar</button>
+  </form>
+</section>
+
+<a href="https://wa.me/523221461118" class="whatsapp">💬</a>
+
+<footer>
+  <p>© 2026 TelKer Studio´s</p>
+</footer>
+
+</body>
+</html>
