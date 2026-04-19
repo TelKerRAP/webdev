@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desarrollo Web Profesional</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
@@ -45,13 +46,15 @@
 </head>
 <body>
 
-<header>
-  <h1>WebDev Pro</h1>
-  <nav>
+<header class="header">
+  <div class="logo">WebDev <span>Pro</span></div>
+
+  <nav class="nav">
     <a href="#">Inicio</a>
     <a href="#services">Servicios</a>
     <a href="#pricing">Precios</a>
     <a href="#contact">Contacto</a>
+    <a href="#contact" class="cta">Cotizar</a>
   </nav>
 </header>
 
@@ -115,10 +118,29 @@
   </div>
 </section>
 
-<section class="testimonials">
-  <h2>Clientes</h2>
-  <p class="testimonial">"Excelente servicio, mi negocio creció mucho"</p>
-  <p class="testimonial">"Muy profesional y rápido"</p>
+<section class="hero">
+  <h2>Diseñamos Páginas Web que Venden</h2>
+  <p>Aumenta tus clientes con una web profesional y moderna</p>
+  <a href="#contact" class="btn">Solicitar Cotización</a>
+
+  <!-- ⭐ RESEÑAS REALES -->
+  <div class="reviews">
+    
+    <div class="review">
+      <p>"Gracias a su trabajo aumenté mis ventas en menos de 2 semanas."</p>
+      <span>— Carlos M., Tienda Online</span>
+    </div>
+
+    <div class="review">
+      <p>"Diseño muy profesional, rápido y con excelente atención."</p>
+      <span>— Fernanda G., Emprendedora</span>
+    </div>
+
+    <div class="review">
+      <p>"Mi negocio ahora se ve como una marca grande."</p>
+      <span>— Luis R., Servicios Locales</span>
+    </div>
+  </div>
 </section>
 
 <section class="form" id="contact">
