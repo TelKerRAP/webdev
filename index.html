@@ -135,10 +135,10 @@
     const correo = document.getElementById("correo").value;
     const mensaje = document.getElementById("mensaje").value;
 
-    const texto = `Hola, quiero más información:
-Nombre: ${nombre}
-Correo: ${correo}
-Mensaje: ${mensaje}`;
+    const texto = `📩 Nuevo mensaje:
+👤 Nombre: ${nombre}
+📧 Correo: ${correo}
+💬 Mensaje: ${mensaje}`;
 
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(texto)}`;
 
