@@ -1,0 +1,351 @@
+/* ================= VARIABLES ================= */
+:root{
+  --bg-main:#0b1120;
+  --bg-card:#0f172a;
+  --bg-soft:#020617;
+  --accent:#38bdf8;
+  --accent-soft:#0ea5e9;
+  --text:#e2e8f0;
+  --muted:#94a3b8;
+}
+
+/* ================= BASE ================= */
+body{
+  background:linear-gradient(180deg,#020617,#0b1120);
+  color:var(--text);
+}
+
+/* ================= SECCIÓN ================= */
+.clientes-pro{
+  padding:100px 20px;
+  text-align:center;
+}
+
+/* ================= FILTROS ================= */
+.filtros{
+  margin:40px 0;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.filtro{
+  background:rgba(255,255,255,0.03);
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+.filtro:hover{
+  border-color:var(--accent);
+  color:#fff;
+}
+
+.filtro.active{
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  color:#000;
+  box-shadow:0 5px 20px rgba(56,189,248,0.3);
+}
+
+/* ================= CARRUSEL ================= */
+.carrusel-container{
+  position:relative;
+}
+
+.carrusel{
+  display:flex;
+  gap:25px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:30px;
+  scroll-snap-type:x mandatory;
+}
+
+.carrusel::-webkit-scrollbar{
+  display:none;
+}
+
+/* ================= CARDS ================= */
+.cliente-card{
+  min-width:320px;
+  background:linear-gradient(145deg,#020617,#0f172a);
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  scroll-snap-align:start;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:all 0.4s ease;
+}
+
+/* glow efecto premium */
+.cliente-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  background:radial-gradient(circle at top, rgba(56,189,248,0.15), transparent 70%);
+  opacity:0;
+  transition:0.4s;
+}
+
+.cliente-card:hover::after{
+  opacity:1;
+}
+
+.cliente-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  border-color:rgba(56,189,248,0.3);
+  box-shadow:0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* ================= IMAGEN ================= */
+.cliente-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  filter:brightness(0.85);
+  transition:0.4s;
+}
+
+.cliente-card:hover img{
+  filter:brightness(1);
+}
+
+/* ================= INFO ================= */
+.info{
+  padding:18px;
+  text-align:left;
+}
+
+.info h3{
+  color:#fff;
+  font-size:18px;
+  margin-bottom:5px;
+}
+
+.info p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ================= RESULTADOS ================= */
+.resultado{
+  margin-top:8px;
+  color:#22c55e;
+  font-weight:600;
+  font-size:14px;
+}
+
+/* ================= BOTONES ================= */
+.acciones{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:12px;
+}
+
+.info button{
+  padding:10px 18px;
+  border:none;
+  background:linear-gradient(135deg,#38bdf8,#0ea5e9);
+  border-radius:25px;
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.3s ease;
+}
+
+.info button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 20px rgba(56,189,248,0.4);
+}
+
+.btn-link{
+  color:#38bdf8;
+  text-decoration:none;
+  font-size:14px;
+}
+
+/* ================= NAV ================= */
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(2,6,23,0.7);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
+  color:#fff;
+  font-size:28px;
+  padding:12px;
+  border-radius:50%;
+  cursor:pointer;
+  z-index:10;
+  transition:0.3s;
+}
+
+.nav:hover{
+  background:#38bdf8;
+  color:#000;
+}
+
+.prev{ left:0; }
+.next{ right:0; }
+
+/* ================= MODAL ================= */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.modal-content{
+  background:linear-gradient(145deg,#020617,#0f172a);
+  padding:25px;
+  border-radius:20px;
+  max-width:850px;
+  width:90%;
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.05);
+  box-shadow:0 20px 60px rgba(0,0,0,0.8);
+
+  animation:fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(0.9);}
+  to{opacity:1; transform:scale(1);}
+}
+
+.modal img{
+  width:100%;
+  border-radius:10px;
+  margin-top:10px;
+}
+
+.modal video{
+  width:100%;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+/* ================= CERRAR ================= */
+.cerrar{
+  float:right;
+  cursor:pointer;
+  font-size:22px;
+  opacity:0.6;
+  transition:0.3s;
+}
+
+.cerrar:hover{
+  opacity:1;
+  color:#38bdf8;
+}
+
+/* ================= LOGOS ================= */
+.logos{
+  overflow:hidden;
+  padding:20px;
+  background:#020617;
+}
+
+.logos-track{
+  display:flex;
+  gap:50px;
+  animation:scrollLogos 20s linear infinite;
+}
+
+.logos img{
+  opacity:0.6;
+}
+
+@keyframes scrollLogos{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+
+.footer-pro{
+  background:linear-gradient(180deg,#020617,#0b1120);
+  padding:60px 20px 20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.footer-col h3{
+  margin-bottom:15px;
+  color:#fff;
+}
+
+.footer-col a{
+  display:block;
+  color:#94a3b8;
+  text-decoration:none;
+  margin:6px 0;
+  transition:0.3s;
+}
+
+.footer-col a:hover{
+  color:#38bdf8;
+  transform:translateX(5px);
+}
+
+.logo{
+  color:#38bdf8;
+}
+
+.logo span{
+  color:#fff;
+}
+
+.footer-desc{
+  color:#94a3b8;
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* SOCIAL */
+.socials{
+  margin-top:10px;
+}
+
+.socials a{
+  display:inline-block;
+  margin-right:10px;
+  font-size:18px;
+  color:#94a3b8;
+  transition:0.3s;
+}
+
+.socials a:hover{
+  color:#38bdf8;
+  transform:scale(1.2);
+}
+
+/* BOTTOM */
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  color:#94a3b8;
+  font-size:14px;
+}

@@ -1,0 +1,172 @@
+<link rel="stylesheet" href="styles.css">
+
+<section class="clientes-pro" id="clientes">
+  <h2>Nuestro Portafolio</h2>
+  <p class="clientes-sub">Proyectos reales que generan resultados</p>
+
+  <!-- FILTROS -->
+  <div class="filtros">
+    <button class="filtro active" data-filter="all">Todos</button>
+    <button class="filtro" data-filter="web">Web</button>
+    <button class="filtro" data-filter="tienda">Tiendas</button>
+    <button class="filtro" data-filter="landing">Landing</button>
+  </div>
+
+  <!-- CARRUSEL -->
+  <div class="carrusel-container">
+    <button class="nav prev">‹</button>
+
+    <div class="carrusel" id="carrusel">
+
+      <!-- CARD -->
+      <div class="cliente-card" data-category="landing">
+        <img src="https://via.placeholder.com/400x250">
+        <div class="info">
+          <h3>Yeo Sushi</h3>
+          <p>Landing + Menú Digital</p>
+          <button onclick="abrirModal('Yeo Sushi','Landing moderna con pedidos','https://via.placeholder.com/800x500')">Ver</button>
+        </div>
+      </div>
+
+      <div class="cliente-card" data-category="web">
+        <img src="https://via.placeholder.com/400x250">
+        <div class="info">
+          <h3>Tarantella</h3>
+          <p>Web Restaurante</p>
+          <button onclick="abrirModal('Tarantella','Sitio completo con menú','https://via.placeholder.com/800x500')">Ver</button>
+        </div>
+      </div>
+
+      <div class="cliente-card" data-category="tienda">
+        <img src="https://via.placeholder.com/400x250">
+        <div class="info">
+          <h3>Market Local</h3>
+          <p>Tienda Online</p>
+          <button onclick="abrirModal('Market Local','Ecommerce completo','https://via.placeholder.com/800x500')">Ver</button>
+        </div>
+      </div>
+
+      <div class="cliente-card" data-category="landing">
+        <img src="https://via.placeholder.com/400x250">
+        <div class="info">
+          <h3>CleanPro</h3>
+          <p>Landing + Agenda</p>
+          <button onclick="abrirModal('CleanPro','Sistema de citas','https://via.placeholder.com/800x500')">Ver</button>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="nav next">›</button>
+  </div>
+</section>
+
+<script>
+// FILTROS
+const filtros = document.querySelectorAll(".filtro");
+const cards = document.querySelectorAll(".cliente-card");
+
+filtros.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    filtros.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filtro = btn.dataset.filter;
+
+    cards.forEach(card=>{
+      if(filtro === "all" || card.dataset.category === filtro){
+        card.style.display = "block";
+      }else{
+        card.style.display = "none";
+      }
+    });
+  });
+});
+
+// CARRUSEL
+const carrusel = document.getElementById("carrusel");
+
+document.querySelector(".next").onclick = () =>{
+  carrusel.scrollLeft += 300;
+}
+
+document.querySelector(".prev").onclick = () =>{
+  carrusel.scrollLeft -= 300;
+}
+
+// MODAL
+function abrirModal(titulo, descripcion, imagen){
+  document.getElementById("modal").style.display = "flex";
+  document.getElementById("modalTitulo").innerText = titulo;
+  document.getElementById("modalDesc").innerText = descripcion;
+  document.getElementById("modalImg").src = imagen;
+}
+
+function cerrarModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal()">✖</span>
+    <h2 id="modalTitulo"></h2>
+    <p id="modalDesc"></p>
+    <img id="modalImg">
+  </div>
+</div>
+
+<footer class="footer-pro">
+
+  <div class="footer-container">
+
+    <!-- MARCA -->
+    <div class="footer-col">
+      <h2 class="logo">WebDev <span>Pro</span></h2>
+      <p class="footer-desc">
+        Creamos páginas web que convierten visitantes en clientes.
+        Diseño moderno, rápido y enfocado en resultados.
+      </p>
+    </div>
+
+    <!-- NAVEGACIÓN -->
+    <div class="footer-col">
+      <h3>Explorar</h3>
+      <a href="#">Inicio</a>
+      <a href="#services">Servicios</a>
+      <a href="#pricing">Planes</a>
+      <a href="#clientes">Portafolio</a>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="footer-col">
+      <h3>Servicios</h3>
+      <a href="#">Landing Pages</a>
+      <a href="#">Tiendas Online</a>
+      <a href="#">Páginas Web</a>
+      <a href="#">SEO</a>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <p>📍 México</p>
+      <p>📧 contacto@webdevpro.com</p>
+      <p>📞 +52 322 146 1118</p>
+
+      <div class="socials">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📸</a>
+        <a href="#">💼</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 WebDev Pro — Todos los derechos reservados</p>
+  </div>
+
+</footer>
